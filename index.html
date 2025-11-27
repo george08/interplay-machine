@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Interplay Machine was designed by George Oates in November 2025 and built using Claude. It's designed to stimulate fresh conversation about a nascent project by juxtaposing important contextual concepts.">
+    <title>Interplay Machine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .words-container {
+            display: flex;
+            gap: 80px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .word-box {
+            font-size: 48px;
+            font-weight: normal;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        button {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            padding: 10px 25px;
+            background-color: black;
+            color: white;
+            border: 2px solid black;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: lowercase;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="words-container">
+            <div class="word-box" id="word1"></div>
+            <div class="word-box" id="word2"></div>
+        </div>
+        <button onclick="refreshWords()">again</button>
+    </div>
+
+    <script>
+        const words = [
+            'absence', 'access', 'audience', 'collapse', 'community', 'consent',
+            'control', 'creation', 'currency', 'description', 'destruction', 'distribution',
+            'enrichment', 'exploitation', 'governance', 'money', 'ownership', 'performance',
+            'performativity', 'privacy', 'refreshment', 'relevance', 'security', 'use'
+        ];
+
+        function getRandomWords() {
+            // Shuffle and pick two different words
+            const shuffled = [...words].sort(() => Math.random() - 0.5);
+            return [shuffled[0], shuffled[1]];
+        }
+
+        function displayWords() {
+            const [word1, word2] = getRandomWords();
+            document.getElementById('word1').textContent = word1;
+            document.getElementById('word2').textContent = word2;
+        }
+
+        function refreshWords() {
+            displayWords();
+        }
+
+        // Display initial words on load
+        displayWords();
+    </script>
+</body>
+</html>
