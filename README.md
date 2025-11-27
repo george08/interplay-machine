@@ -1,2 +1,2 @@
 # interplay-machine
-Juxtapose concepts important to your context. A toy to help generate fresh thinking.
+Juxtapose concepts that are important to the context you're working in. A toy to help generate fresh thinking.
